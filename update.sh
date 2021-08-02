@@ -2,23 +2,32 @@
 
 set -e
 
-cd /home/agnyp/dev/clark/application
-echo [Script]Running in $(pwd) ...
+write_info() {
+  echo
+  echo [Script] $1
+}
 
-echo [Script]checkout master ...
+cd /home/agnyp/dev/clark/application
+write_info "Running in $(pwd) ..."
+
+write_info " Stashing changes ..."
+git stash
+
+write_info "checkout master ..."
 git co master
 
-echo
-echo [Script]pull from origin ...
+write_info "pull from origin ..."
 git pull
 bundle
 yarn
 
-echo
-echo "[Script]migrating dev && test"
+write_info "migrating dev && test"
 rake db:migrate && RAILS_ENV=test rake db:migrate
 git co -
 
-echo
-echo [Script]changing directory back ...
+write_info " Popping stashed changes ..."
+git stash pop
+
+write_info "changing directory back ..."
 cd -
+
