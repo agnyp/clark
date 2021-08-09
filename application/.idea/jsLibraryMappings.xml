@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <excludedPredefinedLibrary name="HTML" />
+    <file url="PROJECT" libraries="{node_modules ember-api, node_modules ember-bridge, node_modules ember-clark-document-upload, node_modules ember-clark-input-button, node_modules ember-clark-modals, node_modules ember-clark-ui, node_modules ember-clark-ui-controls, node_modules ember-clark-ui-form, node_modules ember-css-modules-brand-colors, node_modules ember-native, node_modules experiments, node_modules firestarter.dummy, node_modules mini-server, node_modules offer-rule-matrix, node_modules progress-bar}" />
   </component>
 </project>

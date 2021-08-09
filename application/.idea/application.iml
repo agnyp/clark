@@ -455,6 +455,21 @@
     <orderEntry type="library" scope="PROVIDED" name="yaml_db (v0.7.0, Remote-rvm: ruby-2.6.3-p62 [optisure-rails5]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="yard (v0.9.25, Remote-rvm: ruby-2.6.3-p62 [optisure-rails5]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zip-zip (v0.3, Remote-rvm: ruby-2.6.3-p62 [optisure-rails5]) [gem]" level="application" />
+    <orderEntry type="library" name="node_modules offer-rule-matrix" level="project" />
+    <orderEntry type="library" name="node_modules progress-bar" level="project" />
+    <orderEntry type="library" name="node_modules experiments" level="project" />
+    <orderEntry type="library" name="node_modules ember-clark-ui-form" level="project" />
+    <orderEntry type="library" name="node_modules ember-clark-modals" level="project" />
+    <orderEntry type="library" name="node_modules ember-clark-ui-controls" level="project" />
+    <orderEntry type="library" name="node_modules ember-bridge" level="project" />
+    <orderEntry type="library" name="node_modules ember-css-modules-brand-colors" level="project" />
+    <orderEntry type="library" name="node_modules ember-native" level="project" />
+    <orderEntry type="library" name="node_modules ember-api" level="project" />
+    <orderEntry type="library" name="node_modules ember-clark-ui" level="project" />
+    <orderEntry type="library" name="node_modules mini-server" level="project" />
+    <orderEntry type="library" name="node_modules ember-clark-input-button" level="project" />
+    <orderEntry type="library" name="node_modules firestarter.dummy" level="project" />
+    <orderEntry type="library" name="node_modules ember-clark-document-upload" level="project" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />
