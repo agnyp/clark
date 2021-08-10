@@ -23,6 +23,8 @@ yarn
 
 write_info "migrating dev && test"
 rake db:migrate && RAILS_ENV=test rake db:migrate
+write_info "checking out db/structure.sql ..."
+git co -- db/structure.sql
 git co -
 
 write_info " Popping stashed changes ..."
