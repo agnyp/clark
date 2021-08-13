@@ -4,14 +4,19 @@ set -e
 
 write_info() {
   echo
-  echo [Script] $1
+  echo $(tput setaf 2)[Script] $1 $(tput sgr 0)
 }
 
 cd /home/agnyp/dev/clark/application
 write_info "Running in $(pwd) ..."
 
-write_info " Stashing changes ..."
-git stash
+if [ -z "$(git status --porcelain)" ]; then
+  WD_CLEAN=true
+else
+  WD_CLEAN=false
+  write_info " Stashing changes ..."
+  git stash
+fi
 
 write_info "checkout master ..."
 git co master
@@ -25,10 +30,13 @@ write_info "migrating dev && test"
 rake db:migrate && RAILS_ENV=test rake db:migrate
 write_info "checking out db/structure.sql ..."
 git co -- db/structure.sql
+write_info "changing back to branch ..."
 git co -
 
-write_info " Popping stashed changes ..."
-git stash pop
+if [ $WD_CLEAN == false ]; then
+  write_info " Popping stashed changes ..."
+  git stash pop
+fi
 
 write_info "changing directory back ..."
 cd -
