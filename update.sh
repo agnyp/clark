@@ -4,7 +4,7 @@ set -e
 
 write_info() {
   echo
-  echo $(tput setaf 2)[Script] $1 $(tput sgr 0)
+  echo $(tput setaf 0; tput setab 3)[Script] $1 $(tput sgr0)
 }
 
 cd /home/agnyp/dev/clark/application
