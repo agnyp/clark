@@ -8,8 +8,8 @@ application
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
-application/.idea/**/workspace.xml
-application/.idea/**/tasks.xml
+# application/.idea/**/workspace.xml
+# application/.idea/**/tasks.xml
 application/.idea/**/usage.statistics.xml
 application/.idea/**/shelf
 
