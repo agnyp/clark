@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d353bd68-011d-4a96-a925-6f06a947d47c" name="Changes" comment="" />
+    <list default="true" id="d353bd68-011d-4a96-a925-6f06a947d47c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/client-composites/contracts/main/addon/index/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-composites/contracts/main/addon/index/route.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -171,6 +173,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.last.introduce.type" value="CONST" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -209,7 +212,8 @@
       <workItem from="1630673753659" duration="1345000" />
       <workItem from="1630919468197" duration="33679000" />
       <workItem from="1631177552367" duration="25496000" />
-      <workItem from="1631523210179" duration="1117000" />
+      <workItem from="1631523210179" duration="1704000" />
+      <workItem from="1631708877742" duration="1846000" />
     </task>
     <servers />
   </component>
