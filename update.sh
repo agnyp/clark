@@ -26,10 +26,14 @@ git pull
 bundle
 yarn
 
-write_info "migrating dev && test"
-rake db:migrate && RAILS_ENV=test rake db:migrate
+write_info "migrating dev ..."
+rake db:migrate
+write_info "migrating test ..."
+RAILS_ENV=test rake db:migrate
+
 write_info "checking out db/structure.sql ..."
 git co -- db/structure.sql
+
 write_info "changing back to branch ..."
 git co -
 
