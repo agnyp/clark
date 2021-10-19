@@ -18,7 +18,8 @@ else
   git stash
 fi
 
-write_info "checkout master ..."
+write_info "fetch origin and checkout master ..."
+git fetch origin
 git co master
 
 write_info "pull from origin ..."
