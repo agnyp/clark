@@ -19,7 +19,7 @@ else
 fi
 
 write_info "fetch origin and checkout master ..."
-git fetch origin
+git fetch --prune origin
 git co master
 
 write_info "pull from origin ..."
