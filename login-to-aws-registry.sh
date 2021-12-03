@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# REPO=972669253934
+REPO=972669253934
 # REPO=586145886499
-REPO=940354063714
+# REPO=940354063714
 PROFILE=optisure
 
 saml2aws login --force --profile $PROFILE --session-duration 43200
