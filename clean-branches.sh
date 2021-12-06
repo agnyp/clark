@@ -29,7 +29,7 @@ prompt() {
 
 main() {
   echo "Fetching from origin and pruning ..."
-  # git fetch --prune origin
+  git fetch --prune origin
   echo
 
   while read -u 3 -r branch; do
@@ -49,6 +49,7 @@ main() {
       y     )
         echo "Deleting branch: $ref";
         git branch -D $ref
+        echo
         ;;
       *     ) continue;;
     esac
