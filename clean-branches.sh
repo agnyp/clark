@@ -28,16 +28,19 @@ prompt() {
 }
 
 main() {
-  echo "Fetching from origin and pruning ..."
-  git fetch --prune origin
-  echo
+  read -p "Fetch from origin? (y/N)" fetch
+  if [ "$fetch" = "y" ]; then
+    echo "Fetching from origin and pruning ..."
+    git fetch --prune origin
+    echo
+  fi
 
   while read -u 3 -r branch; do
     local command
-    local ref=$(echo $branch|cut -d " " -f1)
+    local ref=$(ansi2txt <<<$branch|cut -d " " -f1)
     if [[ "$ref" == "*" ]]; then
       echo "You're currently on branch: $(echo $branch|cut -d " " -f2)"
-      echo $(tput setaf 1)"Couldn't delete branch which is current HEAD, so continuing..."$(tput sgr0)
+      echo $(tput setaf 1)"which couldn't be deleted while checked out, so skipping..."$(tput sgr0)
       echo
       continue
     fi
@@ -48,7 +51,7 @@ main() {
       [Nn]* ) continue;;
       y     )
         echo "Deleting branch: $ref";
-        git branch -D $ref
+        git branch -D "$ref";
         echo
         ;;
       *     ) continue;;
