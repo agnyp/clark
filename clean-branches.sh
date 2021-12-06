@@ -17,7 +17,7 @@ HELP
 
 prompt() {
   while true; do
-    echo $1
+    echo $branch
     read -p "$(tput setaf 6)Delete local branch '$ref'? (N/y/i/q/?)$(tput sgr0)" command
     case $command in
       i ) git log --decorate -1 --stat $ref;echo;;
@@ -37,10 +37,18 @@ main() {
 
   while read -u 3 -r branch; do
     local command
-    local ref=$(ansi2txt <<<$branch|cut -d " " -f1)
+    local branch=$(ansi2txt <<<$branch)
+    local ref=$(echo $branch|cut -d " " -f1)
+    if [[ "$ref" == "master" ]]; then
+      continue
+    fi
     if [[ "$ref" == "*" ]]; then
-      echo "You're currently on branch: $(echo $branch|cut -d " " -f2)"
-      echo $(tput setaf 1)"which couldn't be deleted while checked out, so skipping..."$(tput sgr0)
+      current=$(echo $branch|cut -d " " -f2)
+      if [[ "$current" == "master" ]]; then
+        continue
+      fi
+      echo "You're currently on branch: $(tput setaf 2)$current$(tput sgr 0)"
+      echo $(tput setaf 1)"switch to another branch if you want to delete this one. Skipping..."$(tput sgr0)
       echo
       continue
     fi
