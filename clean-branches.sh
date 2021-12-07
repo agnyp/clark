@@ -20,14 +20,17 @@ prompt() {
     echo $branch
     read -p "$(tput setaf 6)Delete local branch '$ref'? (N/y/i/q/?)$(tput sgr0)" command
     case $command in
-      i ) git log --decorate -1 --stat $ref;echo;;
+      i     ) git log --decorate -1 --stat $ref;echo;;
       [?hH] ) echo $(tput setaf 2)"$help"$(tput sgr 0);echo;;
-      * ) break;;
+      *     ) break;;
     esac
   done
 }
 
 main() {
+  local command
+  local branch
+
   read -p "Fetch from origin? (y/N)" fetch
   if [ "$fetch" = "y" ]; then
     echo "Fetching from origin and pruning ..."
@@ -36,8 +39,6 @@ main() {
   fi
 
   while read -u 3 -r branch; do
-    local command
-    local branch=$(ansi2txt <<<$branch)
     local ref=$(echo $branch|cut -d " " -f1)
     if [[ "$ref" == "master" ]]; then
       continue
@@ -64,7 +65,7 @@ main() {
         ;;
       *     ) continue;;
     esac
-  done 3< <( git branch --color=always -l -vv )
+  done 3< <( git branch --color=never -l -vv )
 }
 
 main
