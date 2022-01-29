@@ -38,6 +38,13 @@ git co -- db/structure.sql
 write_info "changing back to branch ..."
 git co -
 
+read -p "rebase with master? (y/N)" fetch
+if [ "$fetch" = "y" ]; then
+  write_info "Rebasing with master ..."
+  git rebase master
+  echo
+fi
+
 if [ $WD_CLEAN == false ]; then
   write_info " Popping stashed changes ..."
   git stash pop
