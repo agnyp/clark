@@ -6,6 +6,14 @@ write_info() {
   echo
   echo $(tput setaf 0; tput setab 3)[Updater] $1 $(tput sgr0)
 }
+rebase_with_master() {
+  read -p "rebase with master? (y/N)" fetch
+  if [ "$fetch" = "y" ]; then
+    write_info "Rebasing with master ..."
+    git rebase master
+    echo
+  fi
+}
 
 cd /home/agnyp/dev/clark/application
 write_info "Running in $(pwd) ..."
@@ -37,12 +45,9 @@ git co -- db/structure.sql
 
 write_info "changing back to branch ..."
 git co -
-
-read -p "rebase with master? (y/N)" fetch
-if [ "$fetch" = "y" ]; then
-  write_info "Rebasing with master ..."
-  git rebase master
-  echo
+current_branch=`git branch --show-current`
+if [[ "$current_branch" != "master" ]]; then
+  rebase_with_master
 fi
 
 if [ $WD_CLEAN == false ]; then
